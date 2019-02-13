@@ -1,0 +1,29 @@
+{
+  "name": "your-app",
+  "version": "1.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "docker:up": "exec docker-compose up",
+    "db:create": "docker-compose exec  postgres createdb -h postgres development",
+    "db:drop": "docker-compose exec  postgres dropdb -h postgres development",
+    "db:disconnect-all": "docker-compose exec postgres psql -h postgres development -c \"SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'development' AND pid <> pg_backend_pid();\"",
+    "db:migrate:make": "knex migrate:make",
+    "db:migrate:latest": "knex migrate:latest",
+    "db:prompt": "docker-compose exec  postgres psql -h postgres",
+    "db:dump": "docker-compose exec postgres pg_dump --schema-only development"
+  },
+
+  "dependencies": {
+    "@types/config": "^0.0.34",
+    "@types/knex": "^0.15.1",
+    "config": "^3.0.1",
+    "dotenv": "^6.0.0",
+    "knex": "0.15.2",
+    "pg": "^7.8.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  }
+}
