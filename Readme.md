@@ -74,6 +74,12 @@ TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Re
     at module.exports (/Users/jrr/~/datedwork/2019.02.12-knex-ts-issue/node_modules/flagged-respawn/index.js:51:3)
 ```
 
-Similarly, it can be worked around with `--knexfile`:
+Similarly, this can be worked around by specifying `--knexfile` explicitly:
 
 `./node_modules/.bin/knex --knexfile knexfile.ts  migrate:make example-migration`
+
+..but this will produce a .js migration instead of .ts like 0.15 does.
+
+To work around _that_, add `-x ts`:
+
+`./node_modules/.bin/knex --knexfile knexfile.ts migrate:make -x ts example-migration`
