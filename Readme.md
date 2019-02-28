@@ -1,6 +1,6 @@
 # Knex.js TypeScript issue
 
-Repro for ([issue](https://github.com/tgriesser/knex/issues/3003)) with knex.js' TypeScript support, which regressed from 0.15 to 0.16. 
+Repro for [issue](https://github.com/tgriesser/knex/issues/3003) with knex.js' TypeScript support, which regressed from 0.15 to 0.16. 
 
 ## Example workflow
 
