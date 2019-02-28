@@ -1,6 +1,6 @@
 # Knex.js TypeScript issue
 
-This repo demonstrates how knex.js breaks for us when upgrading from 0.15 to 0.16.
+Repro for ([issue](https://github.com/tgriesser/knex/issues/3003)) with knex.js' TypeScript support, which regressed from 0.15 to 0.16. 
 
 ## Example workflow
 
